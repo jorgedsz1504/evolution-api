@@ -22,8 +22,8 @@ services:
     networks:
       - evolution-net
     container_name: redis
-    command: >
-      redis-server --port 6379 --appendonly yes
+     command: >
+    redis-server --port 6379 --appendonly yes --protected-mode no --maxmemory 128mb --maxmemory-policy allkeys-lru
     volumes:
       - evolution_redis:/data
     ports:
